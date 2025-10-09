@@ -1,12 +1,25 @@
+<input type="text" [(ngModel)]="searchText" placeholder="Callsign: " />
+<button (click)="searchFlights(searchText)">Ara</button>
 
-<input type="text" [(ngModel)]="searchText" placeholder="Search by callsign">
+<div *ngIf="selectedFlight">
+  <h3>Aranan Callsign: "{{ selectedFlight.callsign }}"</h3>
+  <ul>
+    <li>ICAO24 (Uçak Kimliği): {{ selectedFlight.icao24 }}</li>
+    <li>Country: {{ selectedFlight.origin_country }}</li>
+    <li>Location: {{ selectedFlight.latitude }}, {{ selectedFlight.longitude }}</li>
+    <li>Altitude: {{ selectedFlight.geo_altitude }} m</li>
+    <li>Speed: {{ selectedFlight.velocity }} m/s</li>
+    <li>Heading: {{ selectedFlight.heading }}°</li>
+    <li>On Ground?: {{ selectedFlight.on_ground ? 'Yes' : 'No' }}</li>
+  </ul>
+  <div class="container text-center">
+  <div class="row">
+    <div class="col border">
+      PASSANGER: 
 
-<button (click)="searchFlights()">Search</button>
+      <p>{{selectedFlight.length}}</p>
+    </div>
+  </div>
+</div>
+</div>
 
-<h1>{{ trackByFlightId(0, flights[0]) }} </h1>
-
-<ul>
-    <li *ngFor="let flight of flights; trackBy: trackByFlightId">
-        Callsign: {{ flight[1] }} | Origin Country: {{ flight[2] }} | Longitude: {{ flight[5] }} | Latitude: {{ flight[6] }} | time_position: {{ flight[3] }}
-    </li>
-</ul>

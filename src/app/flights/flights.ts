@@ -15,19 +15,51 @@ export class Flights implements OnInit {
   constructor(private opensky: OpenskyService) { }
   ngOnInit() {
     this.opensky.getAllStates().subscribe((data: any) => {
-      this.flights = data.states;
+      this.flights = data.states || [];
+      console.log(this.flights);
     });
   }
 
-  trackByFlightId(index: number, flights: any): string{
-    return flights[1];
+
+
+selectedFlight: any = null;
+
+searchFlights(callsign: string) {
+  const trimmedCallsign = callsign.trim().toLowerCase();
+  if (trimmedCallsign === '') {
+    this.selectedFlight = null;
+    return;
   }
 
-  searchFlights() {
-    if(this.searchText.trim() === '') {
-      if (this.searchText === '') {
-        
-      }
-    }
+  const match = this.flights.find(flight =>
+    flight[1] && flight[1].trim().toLowerCase() === trimmedCallsign
+  );
+
+  if (match) {
+    this.selectedFlight = {
+      icao24: match[0],
+      callsign: match[1],
+      origin_country: match[2],
+      time_position: match[3],
+      last_contact: match[4],
+      longitude: match[5],
+      latitude: match[6],
+      baro_altitude: match[7],
+      on_ground: match[8],
+      velocity: match[9],
+      heading: match[10],
+      vertical_rate: match[11],
+      sensors: match[12],
+      geo_altitude: match[13],
+      squawk: match[14],
+      spi: match[15],
+      position_source: match[16]
+    };
+  } else {
+    this.selectedFlight = null;
+  }
 }
 }
+
+
+//TVF37HQ
