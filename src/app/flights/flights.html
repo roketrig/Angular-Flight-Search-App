@@ -1,1 +1,12 @@
-<p>flights works!</p>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search by callsign">
+
+<button (click)="searchFlights()">Search</button>
+
+<h1>{{ trackByFlightId(0, flights[0]) }} </h1>
+
+<ul>
+    <li *ngFor="let flight of flights; trackBy: trackByFlightId">
+        Callsign: {{ flight[1] }} | Origin Country: {{ flight[2] }} | Longitude: {{ flight[5] }} | Latitude: {{ flight[6] }} | time_position: {{ flight[3] }}
+    </li>
+</ul>
