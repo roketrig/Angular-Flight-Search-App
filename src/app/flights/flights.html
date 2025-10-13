@@ -1,25 +1,21 @@
-<input type="text" [(ngModel)]="searchText" placeholder="Callsign: " />
-<button (click)="searchFlights(searchText)">Ara</button>
+<input type="text" [(ngModel)]="searchText" placeholder="Example: TVF12UH"   />
+<button (click)="searchFlights(searchText)">Search</button>
 
 <div *ngIf="selectedFlight">
-  <h3>Aranan Callsign: "{{ selectedFlight.callsign }}"</h3>
+  <h3>Search Result for Callsign: "{{ selectedFlight.callsign }}"</h3>
   <ul>
-    <li>ICAO24 (Uçak Kimliği): {{ selectedFlight.icao24 }}</li>
+    <li>ICAO24 (Aircraft ID): {{ selectedFlight.icao24 }}</li>
     <li>Country: {{ selectedFlight.origin_country }}</li>
     <li>Location: {{ selectedFlight.latitude }}, {{ selectedFlight.longitude }}</li>
     <li>Altitude: {{ selectedFlight.geo_altitude }} m</li>
     <li>Speed: {{ selectedFlight.velocity }} m/s</li>
     <li>Heading: {{ selectedFlight.heading }}°</li>
     <li>On Ground?: {{ selectedFlight.on_ground ? 'Yes' : 'No' }}</li>
+    <li>Last Contact: {{ selectedFlight.last_contact | date:'short' }}</li>
+    <li>Barometric Altitude: {{ selectedFlight.baro_altitude }} m</li>
+    <li>Vertical Rate: {{ selectedFlight.vertical_rate }} m/s</li>
   </ul>
-  <div class="container text-center">
-  <div class="row">
-    <div class="col border">
-      PASSANGER: 
 
-      <p>{{selectedFlight.length}}</p>
-    </div>
-  </div>
-</div>
+  <h3>The flight data in this section is obtained from real-time air traffic monitoring services. Each aircraft is tracked using a unique identifier called ICAO24. ICAO24 is a 24-bit address broadcast by the aircraft's transponder device and is unique worldwide.</h3>
 </div>
 
