@@ -29,6 +29,7 @@ This project is built with Angular to display real-time flight data. It tracks a
 <img width="1452" height="711" alt="ff" src="https://github.com/user-attachments/assets/8e9edb4d-4c5c-4b55-80f6-bbffabfce3b8" />
 
 <img width="1946" height="1057" alt="Screenshot 2025-10-13 103618" src="https://github.com/user-attachments/assets/5e88a967-2730-4ec0-a9d4-70d497ff8540" />
+![ezgif-782fe554059e0c](https://github.com/user-attachments/assets/0ac8008c-e850-44a9-b01f-f394aabed676)
 
 
 ## Installation
