@@ -11,8 +11,6 @@ This project is built with Angular to display real-time flight data. It tracks a
 - Real-time flight data display
 - Aircraft identification via ICAO24
 - Location, altitude, speed, heading, and more
-- Modular design using Angular components
-- Responsive and user-friendly interface
 
 ## Technologies Used
 
