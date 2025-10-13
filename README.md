@@ -1,8 +1,8 @@
 
-<h2>This application provides technical information related to the aircraft based on the aircraft ID</h2>
-
 
 # Angular Flight Search App
+
+<h2>This application provides technical information related to the aircraft based on the aircraft ID</h2>
 
 This project is built with Angular to display real-time flight data. It tracks aircraft using their unique ICAO24 identifiers and presents key flight information such as location, altitude, speed, and heading.
 
