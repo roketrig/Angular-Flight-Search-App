@@ -2,7 +2,7 @@
 <button (click)="searchFlights(searchText)">Search</button>
 
 <div *ngIf="selectedFlight">
-  <h3>Search Result for Callsign: "{{ selectedFlight.callsign }}"</h3>
+  <h3>Search Result for Aircraft Id: "{{ selectedFlight.callsign }}"</h3>
   <ul>
     <li>ICAO24 (Aircraft ID): {{ selectedFlight.icao24 }}</li>
     <li>Country: {{ selectedFlight.origin_country }}</li>
